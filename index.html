@@ -21,10 +21,12 @@
             font-size: 2.5rem;
             font-weight: bold;
             border-right: 4px solid #00ff41;
-            padding-right: 10px;
+            /* Lock the width to exactly 30 characters */
+            width: 30ch; 
             white-space: nowrap;
             overflow: hidden;
-            animation: typing 3s steps(40, end), cursor .4s step-end infinite alternate;
+            /* Change steps to 30 to match the character count perfectly */
+            animation: typing 3s steps(30, end), cursor .4s step-end infinite alternate;
         }
 
         span.highlight {
@@ -34,12 +36,12 @@
 
         /* Typing Effect */
         @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
+            from { width: 0; }
+            to { width: 30ch; } /* Animate to the exact character limit */
         }
 
         @keyframes cursor {
-            50% { border-color: transparent }
+            50% { border-color: transparent; }
         }
     </style>
 </head>
